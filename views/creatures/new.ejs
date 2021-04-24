@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/home" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <label>HP:</label>
+  <input type="text" name="hitPoints">
+  <label>AC:</label>
+  <input type="text" name="armorClass">
+  <label>Attacks:</label>
+  <input type="text" name="attacks">
+ 
+  <!-- ability scores -->
+  <label>STR:</label>
+  <input type="text" name="strength">
+  <label>DEX:</label>
+  <input type="text" name="dexterity">
+  <label>CON:</label>
+  <input type="text" name="constitution">
+  <label>INT:</label>
+  <input type="text" name="intelligence">
+  <label>WIS:</label>
+  <input type="text" name="wisdom">
+  <label>CHA:</label>
+  <input type="text" name="charisma">
+  
+  <!-- extra info -->
+  <label>Defenses:</label>
+  <input type="text" name="defenses">
+  <label>Details:</label>
+  <input type="text" name="details">
+  <label>EXP:</label>
+  <input type="text" name="experience">
+  <input type="submit" value="Add Creature">
+</form>
+
+<%- include('../partials/footer') %>

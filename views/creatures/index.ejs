@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>HP</th>
+      <th>AC</th>
+      <th>Attacks</th>
+      <th>STR</th>
+      <th>DEX</th>
+      <th>CON</th>
+      <th>INT</th>
+      <th>WIS</th>
+      <th>CHA</th>
+      <th>Defenses</th>
+      <th>Details</th>
+      <th>EXP</th>
+    </tr>
+  </thead>
+    <tbody>
+      <% creatures.forEach(function(creature) { %>
+      <tr>
+        <td><%= creature.name %></td>
+        <td><%= creature.hitPoints %></td>
+        <td><%= creature.armorClass %></td>
+        <td><%= creature.attacks %></td>
+        <td><%= creature.strength %></td>
+        <td><%= creature.dexterity %></td>
+        <td><%= creature.constitution %></td>
+        <td><%= creature.intelligence %></td>
+        <td><%= creature.wisdom %></td>
+        <td><%= creature.charisma %></td>
+        <td><%= creature.defenses %></td>
+        <td><%= creature.details %></td>
+        <td><%= creature.experience %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  
+<%- include('../partials/footer') %>
