@@ -20,7 +20,7 @@
     <tbody>
       <% creatures.forEach(function(creature) { %>
       <tr>
-        <td><%= creature.name %></td>
+        <td><a href="/home/<%= creature._id %>"><%= creature.name %></a></td>
         <td><%= creature.hitPoints %></td>
         <td><%= creature.armorClass %></td>
         <td><%= creature.attacks %></td>
@@ -33,9 +33,21 @@
         <td><%= creature.defenses %></td>
         <td><%= creature.details %></td>
         <td><%= creature.experience %></td>
+        <td>
+          <a href="/home/<%= creature._id %>/edit">Edit</a>
+        </td>
+        <td>
+          <form action="/home/<%= creature._id %>?_method=DELETE" method="POST">
+            <button type="submit">🗑️</button>
+          </form>
+        </td>
       </tr>
       <% }); %>
     </tbody>
   </table>
+
+  <form action="home/new">
+    <button type="submit">Add New Creature</button>
+  </form>
   
 <%- include('../partials/footer') %>

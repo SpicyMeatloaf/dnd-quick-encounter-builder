@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+<form id="new-form" action="/home/<%= creatureId %>?_method=PUT" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name" value="<%= creature.name %>">
+  <label>HP:</label>
+  <input type="text" name="hitPoints" value="<%= creature.hitPoints %>">
+  <label>AC:</label>
+  <input type="text" name="armorClass" value="<%= creature.armorClass %>">
+  <label>Attacks:</label>
+  <input type="text" name="attacks" value="<%= creature.attacks %>">
+ 
+  <!-- ability scores -->
+  <label>STR:</label>
+  <input type="text" name="strength" value="<%= creature.strength %>">
+  <label>DEX:</label>
+  <input type="text" name="dexterity" value="<%= creature.dexterity %>">
+  <label>CON:</label>
+  <input type="text" name="constitution" value="<%= creature.constitution %>">
+  <label>INT:</label>
+  <input type="text" name="intelligence" value="<%= creature.intelligence %>">
+  <label>WIS:</label>
+  <input type="text" name="wisdom" value="<%= creature.wisdom %>">
+  <label>CHA:</label>
+  <input type="text" name="charisma" value="<%= creature.charisma %>">
+  
+  <!-- extra info -->
+  <label>Defenses:</label>
+  <input type="text" name="defenses" value="<%= creature.defenses %>">
+  <label>Details:</label>
+  <input type="text" name="details" value="<%= creature.details %>">
+  <label>EXP:</label>
+  <input type="text" name="experience" value="<%= creature.experience %>">
+  <input type="submit" value="Finish editing">
+</form>
+
+<%- include('../partials/footer') %>
