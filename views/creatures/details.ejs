@@ -1,17 +1,18 @@
 <%- include('../partials/header') %>
+
 <table id="list">
   <thead>
     <tr>
       <th>Name</th>
-      <th>HP</th>
-      <th>AC</th>
+      <th>Defenses</th>
+      <th>Details</th>
     </tr>
   </thead>
     <tbody>
       <tr>
         <td><%= creature.name %></td>
+        <td><%= creature.defenses %></td>
         <td><%= creature.details %></td>
-        <td><%= creature.experience %></td>
       </tr>
     </tbody>
   </table>

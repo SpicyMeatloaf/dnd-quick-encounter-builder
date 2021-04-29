@@ -13,28 +13,53 @@
       <th>WIS</th>
       <th>CHA</th>
       <th>Defenses</th>
-      <th>Details</th>
       <th>EXP</th>
     </tr>
   </thead>
     <tbody>
       <% creatures.forEach(function(creature) { %>
       <tr>
-        <td><a href="/home/<%= creature._id %>"><%= creature.name %></a></td>
+
+        <% if(creature.name) { %>
+          <td>
+            <a href="/home/<%= creature._id %>"><%= creature.name %></a>
+          </td>
+          <% } else { %>
+          <td>
+            <a href="/home/<%= creature._id %>">Unnamed</a>
+          </td>
+        <% } %>
+
         <td><%= creature.hitPoints %></td>
         <td><%= creature.armorClass %></td>
         <td><%= creature.attacks %></td>
-        <td><%= creature.strength %></td>
-        <td><%= creature.dexterity %></td>
-        <td><%= creature.constitution %></td>
-        <td><%= creature.intelligence %></td>
-        <td><%= creature.wisdom %></td>
-        <td><%= creature.charisma %></td>
+
+        <!-- ability scores -->
+        <% creature.abilityScores.forEach(function(score) { %>
+          <% if(score) { %>
+          <td><%= score %> (<%= Math.floor((score-10)/2) %>)</td>
+          <% } else { %>
+          <td>- (-)</td>
+        <% }}); %>
+
+        <!-- print defenses, otherwise n/a -->
+        <% if(creature.defenses) { %>
         <td><%= creature.defenses %></td>
-        <td><%= creature.details %></td>
-        <td><%= creature.experience %></td>
+        <% } else { %>
+        <td>n/a</td>
+        <% } %>
+
+        <!-- print experience, otherwise n/a -->
+        <% if(creature.experience) { %>
+          <td><%= creature.experience %></td>
+          <% } else { %>
+          <td>n/a</td>
+        <% } %>
+
         <td>
-          <a href="/home/<%= creature._id %>/edit">Edit</a>
+          <form action="/home/<%= creature._id %>/edit">
+            <button type="submit">Edit</button>
+          </form>
         </td>
         <td>
           <form action="/home/<%= creature._id %>?_method=DELETE" method="POST">

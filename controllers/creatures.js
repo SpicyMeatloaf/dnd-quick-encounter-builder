@@ -20,7 +20,7 @@ function index(req, res) {
 function details(req, res) {
   Creature.findById(req.params.id, function(err, creature){
     res.render('creatures/details', {
-      title: "Creature Details",
+      title: "Details",
       creature,
       creatureId: req.params.id,
     })
