@@ -1,4 +1,7 @@
 <%- include('../partials/header') %>
+
+<h1>Edit Posting</h1>
+
 <form id="new-form" action="/home/<%= creatureId %>?_method=PUT" method="POST">
   <label>Name:</label>
   <input type="text" name="name" value="<%= creature.name %>">

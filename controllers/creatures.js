@@ -13,14 +13,14 @@ module.exports = {
 
 function index(req, res) {
     Creature.find({}, function (err, creatures) {
-      res.render("creatures/index", { title: "All Creatures", creatures });
+      res.render("creatures/index", { title: "The Loremaster's Board", creatures });
     });
   }
 
 function details(req, res) {
   Creature.findById(req.params.id, function(err, creature){
     res.render('creatures/details', {
-      title: "Details",
+      title: "The Loremaster's Board - Creature Details",
       creature,
       creatureId: req.params.id,
     })
@@ -28,7 +28,7 @@ function details(req, res) {
 }
 
 function newCreature(req, res) {
-  res.render("creatures/new", { title: "Add Creature" });
+  res.render("creatures/new", { title: "The Loremaster's Board - Post a Creature" });
 }
   
 function create(req, res) {
@@ -53,7 +53,7 @@ function edit(req, res) {
 
   console.log(creature);
     res.render('creatures/edit', {
-      title: "Edit Creature",
+      title: "The Loremaster's Board - Edit",
       creature,
       creatureId: req.params.id,
     })
