@@ -16,7 +16,9 @@ Technologies
 
 Screenshots
 -----------
-* [Overview]
+* [Overview](https://i.imgur.com/ol1VLFV.png)
+* [Edit Screen](https://i.imgur.com/2ZVSdS2.png)
+* [Details Screen](https://i.imgur.com/VGckLNS.png)
 
 Getting Started
 ---------------
