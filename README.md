@@ -22,7 +22,7 @@ Screenshots
 
 Getting Started
 ---------------
-[Link to Project (Heroku)](https://dnd-dm-encounter-reference.herokuapp.com)
+[Link to Project (Heroku)](https://the-loremasters-board.herokuapp.com)
 
 Instructions:
 1. Like a spreadsheet, but simpler! Put in whatever you think is important and the app will display most of it.
