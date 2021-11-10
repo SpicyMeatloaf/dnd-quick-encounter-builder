@@ -1,5 +1,4 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const creatureCtrl = require('../controllers/creatures');
 
 router.get('/', creatureCtrl.index);

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const connectionString = "mongodb+srv://admin:deAdmin@cluster0.4iat3.mongodb.net/dnd-reference-builder?retryWrites=true&w=majority";
+const connectionString = process.env.DATABASE_URI;
 
 mongoose.connect(
   connectionString,

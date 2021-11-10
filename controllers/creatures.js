@@ -13,7 +13,11 @@ module.exports = {
 
 function index(req, res) {
     Creature.find({}, function (err, creatures) {
-      res.render("creatures/index", { title: "The Loremaster's Board", creatures });
+      res.render("creatures/index", { 
+        title: "The Loremaster's Board", 
+        creatures,
+        user: req.user
+      });
     });
   }
 
@@ -23,12 +27,16 @@ function details(req, res) {
       title: "The Loremaster's Board - Creature Details",
       creature,
       creatureId: req.params.id,
+      user: req.user
     })
   });
 }
 
 function newCreature(req, res) {
-  res.render("creatures/new", { title: "The Loremaster's Board - Post a Creature" });
+  res.render("creatures/new", { 
+    title: "The Loremaster's Board - Post a Creature",
+    user: req.user
+  });
 }
   
 function create(req, res) {
@@ -56,6 +64,7 @@ function edit(req, res) {
       title: "The Loremaster's Board - Edit",
       creature,
       creatureId: req.params.id,
+      user: req.user
     })
   });
 }
